@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  renderto: MyString
+  image: MyString
+  status: 1
+  startdate: 2015-11-20 11:27:39
+  enddate: 2015-11-20 11:27:39
+  starttime: 2015-11-20 11:27:39
+  endtime: 2015-11-20 11:27:39
+
+two:
+  title: MyString
+  renderto: MyString
+  image: MyString
+  status: 1
+  startdate: 2015-11-20 11:27:39
+  enddate: 2015-11-20 11:27:39
+  starttime: 2015-11-20 11:27:39
+  endtime: 2015-11-20 11:27:39

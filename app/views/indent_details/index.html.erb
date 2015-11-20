@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Indent Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Indent</th>
+      <th>Product</th>
+      <th>Name</th>
+      <th>Num</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @indent_details.each do |indent_detail| %>
+      <tr>
+        <td><%= indent_detail.indent_id %></td>
+        <td><%= indent_detail.product_id %></td>
+        <td><%= indent_detail.name %></td>
+        <td><%= indent_detail.num %></td>
+        <td><%= indent_detail.price %></td>
+        <td><%= link_to 'Show', indent_detail %></td>
+        <td><%= link_to 'Edit', edit_indent_detail_path(indent_detail) %></td>
+        <td><%= link_to 'Destroy', indent_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Indent detail', new_indent_detail_path %>

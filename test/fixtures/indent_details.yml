@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  indent_id: MyString
+  product_id: MyString
+  name: MyString
+  num: 1
+  price: MyString
+
+two:
+  indent_id: MyString
+  product_id: MyString
+  name: MyString
+  num: 1
+  price: MyString

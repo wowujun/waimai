@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Selleradmin:</strong>
+  <%= @seller.selleradmin_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @seller.name %>
+</p>
+
+<p>
+  <strong>Summary:</strong>
+  <%= @seller.summary %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @seller.tel %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @seller.address %>
+</p>
+
+<p>
+  <strong>Logo:</strong>
+  <%= @seller.logo %>
+</p>
+
+<p>
+  <strong>Hint:</strong>
+  <%= @seller.hint %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @seller.location %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @seller.status %>
+</p>
+
+<%= link_to 'Edit', edit_seller_path(@seller) %> |
+<%= link_to 'Back', sellers_path %>

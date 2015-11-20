@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @selleradmin.name %>
+</p>
+
+<p>
+  <strong>Loginname:</strong>
+  <%= @selleradmin.loginname %>
+</p>
+
+<p>
+  <strong>Password digest:</strong>
+  <%= @selleradmin.password_digest %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @selleradmin.status %>
+</p>
+
+<%= link_to 'Edit', edit_selleradmin_path(@selleradmin) %> |
+<%= link_to 'Back', selleradmins_path %>

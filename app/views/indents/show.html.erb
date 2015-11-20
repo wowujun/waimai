@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @indent.customer_id %>
+</p>
+
+<p>
+  <strong>Diliveryman:</strong>
+  <%= @indent.diliveryman_id %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @indent.number %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @indent.status %>
+</p>
+
+<p>
+  <strong>Orderstatus:</strong>
+  <%= @indent.orderstatus %>
+</p>
+
+<p>
+  <strong>Sum:</strong>
+  <%= @indent.sum %>
+</p>
+
+<p>
+  <strong>Bltime:</strong>
+  <%= @indent.bltime %>
+</p>
+
+<p>
+  <strong>Finishtime:</strong>
+  <%= @indent.finishtime %>
+</p>
+
+<%= link_to 'Edit', edit_indent_path(@indent) %> |
+<%= link_to 'Back', indents_path %>

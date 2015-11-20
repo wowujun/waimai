@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  selleradmin_id: MyString
+  name: MyString
+  summary: MyString
+  tel: MyString
+  address: MyString
+  logo: MyString
+  hint: MyString
+  location: MyString
+  status: 1
+
+two:
+  selleradmin_id: MyString
+  name: MyString
+  summary: MyString
+  tel: MyString
+  address: MyString
+  logo: MyString
+  hint: MyString
+  location: MyString
+  status: 1

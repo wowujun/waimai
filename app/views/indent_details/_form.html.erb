@@ -1,0 +1,37 @@
+<%= form_for(@indent_detail) do |f| %>
+  <% if @indent_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indent_detail.errors.count, "error") %> prohibited this indent_detail from being saved:</h2>
+
+      <ul>
+      <% @indent_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :indent_id %><br>
+    <%= f.text_field :indent_id %>
+  </div>
+  <div class="field">
+    <%= f.label :product_id %><br>
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :num %><br>
+    <%= f.number_field :num %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

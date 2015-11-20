@@ -1,0 +1,33 @@
+<%= form_for(@selleradmin) do |f| %>
+  <% if @selleradmin.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@selleradmin.errors.count, "error") %> prohibited this selleradmin from being saved:</h2>
+
+      <ul>
+      <% @selleradmin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :loginname %><br>
+    <%= f.text_field :loginname %>
+  </div>
+  <div class="field">
+    <%= f.label :password_digest %><br>
+    <%= f.text_field :password_digest %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

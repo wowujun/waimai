@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @diliveryman.name %>
+</p>
+
+<p>
+  <strong>Weichat:</strong>
+  <%= @diliveryman.weichat_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @diliveryman.status %>
+</p>
+
+<%= link_to 'Edit', edit_diliveryman_path(@diliveryman) %> |
+<%= link_to 'Back', diliverymen_path %>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer_id: MyString
+  diliveryman_id: MyString
+  number: MyString
+  status: 1
+  orderstatus: 1
+  sum: MyString
+  bltime: 2015-11-20 11:33:21
+  finishtime: 2015-11-20 11:33:21
+
+two:
+  customer_id: MyString
+  diliveryman_id: MyString
+  number: MyString
+  status: 1
+  orderstatus: 1
+  sum: MyString
+  bltime: 2015-11-20 11:33:21
+  finishtime: 2015-11-20 11:33:21

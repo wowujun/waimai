@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Indent:</strong>
+  <%= @indent_detail.indent_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @indent_detail.product_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @indent_detail.name %>
+</p>
+
+<p>
+  <strong>Num:</strong>
+  <%= @indent_detail.num %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @indent_detail.price %>
+</p>
+
+<%= link_to 'Edit', edit_indent_detail_path(@indent_detail) %> |
+<%= link_to 'Back', indent_details_path %>

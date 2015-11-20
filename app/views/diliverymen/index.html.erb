@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Diliverymen</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weichat</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @diliverymen.each do |diliveryman| %>
+      <tr>
+        <td><%= diliveryman.name %></td>
+        <td><%= diliveryman.weichat_id %></td>
+        <td><%= diliveryman.status %></td>
+        <td><%= link_to 'Show', diliveryman %></td>
+        <td><%= link_to 'Edit', edit_diliveryman_path(diliveryman) %></td>
+        <td><%= link_to 'Destroy', diliveryman, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Diliveryman', new_diliveryman_path %>

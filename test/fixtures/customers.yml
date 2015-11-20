@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  weichat_id: MyString
+  tel: MyString
+  address: MyString
+  location: MyString
+  balance: 1
+  integral: 1
+
+two:
+  name: MyString
+  weichat_id: MyString
+  tel: MyString
+  address: MyString
+  location: MyString
+  balance: 1
+  integral: 1

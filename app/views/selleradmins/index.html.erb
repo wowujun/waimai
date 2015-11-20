@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Selleradmins</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Loginname</th>
+      <th>Password digest</th>
+      <th>Status</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @selleradmins.each do |selleradmin| %>
+      <tr>
+        <td><%= selleradmin.name %></td>
+        <td><%= selleradmin.loginname %></td>
+        <td><%= selleradmin.password_digest %></td>
+        <td><%= selleradmin.status %></td>
+        <td><%= link_to 'Show', selleradmin %></td>
+        <td><%= link_to 'Edit', edit_selleradmin_path(selleradmin) %></td>
+        <td><%= link_to 'Destroy', selleradmin, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Selleradmin', new_selleradmin_path %>

@@ -1,0 +1,49 @@
+<%= form_for(@indent) do |f| %>
+  <% if @indent.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indent.errors.count, "error") %> prohibited this indent from being saved:</h2>
+
+      <ul>
+      <% @indent.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :customer_id %><br>
+    <%= f.text_field :customer_id %>
+  </div>
+  <div class="field">
+    <%= f.label :diliveryman_id %><br>
+    <%= f.text_field :diliveryman_id %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :orderstatus %><br>
+    <%= f.number_field :orderstatus %>
+  </div>
+  <div class="field">
+    <%= f.label :sum %><br>
+    <%= f.text_field :sum %>
+  </div>
+  <div class="field">
+    <%= f.label :bltime %><br>
+    <%= f.datetime_select :bltime %>
+  </div>
+  <div class="field">
+    <%= f.label :finishtime %><br>
+    <%= f.datetime_select :finishtime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

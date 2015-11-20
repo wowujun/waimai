@@ -1,0 +1,62 @@
+
+
+
+
+
+<%=render 'head' %>
+
+<div class="container fluid-height clearfix">
+
+  <h2 class="heading" style="margin-top: 15px;">管理员设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <th class="heading">管理员姓名</th>
+        <th class="heading">登录名</th>
+        <th class="heading">密码</th>
+        <th class="heading">状态</th>
+        <th class="heading">操作</th>
+      </tr>
+      </thead>
+
+
+      <% @admins.each do |admin| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= admin.name %></td>
+            <td><%= admin.loginname %></td>
+            <td>******</td>
+            <%if admin.status == 1 %>
+                <td align="center">
+                  <i class="heading icon-unlock">正常</i>
+                </td>
+            <% else %>
+                <td align="center">
+                  <i class="icon-lock">停用</i>
+                </td>
+            <% end %>
+            </td>
+            <% if admin.name  != 'admin' %>
+                <td width="100px" align="center"><%= link_to "", admin,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+                  <%= link_to '', admin, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+            <% else %>
+                <td>&nbsp;</td>
+            <% end %>
+          </tr>
+      <% end %>
+
+    </table>
+
+    <br>
+
+
+
+    <%= link_to ' 创建管理员', new_admin_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+
+
+
+
