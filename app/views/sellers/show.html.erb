@@ -1,49 +1,51 @@
-<p id="notice"><%= notice %></p>
+<%= render 'head'%>
+<div class="container fluid-height clearfix">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="heading"><i class="icon-bullhorn"></i>&nbsp; 商家信息</h2>
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-12">
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家管理ID:</span>
+            <%=  @seller.selleradmin_id %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家姓名:</span>
+            <%= @seller.name %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家简介:</span>
+            <%= @seller.summary %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家电话:</span>
+            <%= @seller.tel %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家地址:</span>
+            <%= @seller.address %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家logo:</span>
+            <%= @seller.logo %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">提示信息:</span>
+            <%= @seller.hint %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家位置:</span>
+            <%= @seller.location %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家状态:</span>
+            <%= @seller.status %>
+          </p>
+          <%= link_to '编辑', edit_advertisement_path(@diliveryman) ,class:"btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+          <%= link_to '返回', advertisements_path,class:"btn btn-primary-outline pull-right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Selleradmin:</strong>
-  <%= @seller.selleradmin_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @seller.name %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @seller.summary %>
-</p>
-
-<p>
-  <strong>Tel:</strong>
-  <%= @seller.tel %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @seller.address %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @seller.logo %>
-</p>
-
-<p>
-  <strong>Hint:</strong>
-  <%= @seller.hint %>
-</p>
-
-<p>
-  <strong>Location:</strong>
-  <%= @seller.location %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @seller.status %>
-</p>
-
-<%= link_to 'Edit', edit_seller_path(@seller) %> |
-<%= link_to 'Back', sellers_path %>

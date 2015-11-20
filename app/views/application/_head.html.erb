@@ -1,5 +1,4 @@
-
-  <header id="header">
+<header id="header">
     <div class="top-bar">
       <div class="slidedown collapse">
         <div class="container">
@@ -70,8 +69,8 @@
               <span aria-hidden="true" class="icon-jpy"></span>广告</a>
             </li>
 
-            <li><a href="/advertisements">
-              <span aria-hidden="true" class="icon-jpy"></span>订单</a>
+            <li class="dropdown"><a data-toggle="dropdown" href="#">
+              <span aria-hidden="true" ><i class="icon-gears"></i></span>订单<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                   <%= link_to "订单管理", indents_path %>

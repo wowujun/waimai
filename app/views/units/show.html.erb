@@ -1,9 +1,18 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @unit.name %>
-</p>
-
-<%= link_to 'Edit', edit_unit_path(@unit) %> |
-<%= link_to 'Back', units_path %>
+<%= render 'head'%>
+<div class="container fluid-height clearfix">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="heading"><i class="icon-bullhorn"></i>&nbsp; 产品单位信息</h2>
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-12">
+          <p>
+            <span class="col-sm-2" style="text-align: right;">姓名:</span>
+            <%= @unit.name %>
+          </p>
+          <%= link_to '编辑', edit_advertisement_path(@unit) ,class:"btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+          <%= link_to '返回', advertisements_path,class:"btn btn-primary-outline pull-right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

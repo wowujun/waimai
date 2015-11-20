@@ -1,27 +1,31 @@
-<p id="notice"><%= notice %></p>
+<%=render 'head' %>
 
-<h1>Listing Productclas</h1>
+<div class="container fluid-height clearfix">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @productclas.each do |productcla| %>
+  <h2 class="heading" style="margin-top: 15px;">配送员设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
       <tr>
-        <td><%= productcla.name %></td>
-        <td><%= link_to 'Show', productcla %></td>
-        <td><%= link_to 'Edit', edit_productcla_path(productcla) %></td>
-        <td><%= link_to 'Destroy', productcla, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th></th>
+        <th class="heading">姓名</th>
+        <th class="heading">操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
+      <% @productclas.each do |productcla| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= productcla.name %></td>
+            <td width="100px" align="center"><%= link_to "", productcla,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', productcla, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
 
-<br>
+    </table>
 
-<%= link_to 'New Productcla', new_productcla_path %>
+    <br>
+
+    <%= link_to ' 新建配送员', new_productcla_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

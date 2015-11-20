@@ -1,49 +1,55 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Unit:</strong>
-  <%= @product.unit_id %>
-</p>
+<%= render 'head'%>
+<div class="container fluid-height clearfix">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="heading"><i class="icon-bullhorn"></i>&nbsp; 用户信息</h2>
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-12">
+          <p>
+            <span class="col-sm-2" style="text-align: right;">单位ID:</span>
+            <%=  @product.unit_id %>
+          </p>
 
-<p>
-  <strong>Productcla:</strong>
-  <%= @product.productcla_id %>
-</p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">产品分类ID:</span>
+            <%= @product.productcla_id %>
+          </p>
 
-<p>
-  <strong>Seller:</strong>
-  <%= @product.seller_id %>
-</p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">商家ID:</span>
+            <%=  @product.seller_id %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">姓名:</span>
+            <%=  @product.name %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">图片:</span>
+            <%=  @product.image %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">原价:</span>
+            <%=  @product.costprice %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">现价:</span>
+            <%=  @product.currentprice %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">数量:</span>
+            <%=  @product.num %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">状态:</span>
+            <%=  @product.status %>
+          </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-</p>
-
-<p>
-  <strong>Costprice:</strong>
-  <%= @product.costprice %>
-</p>
-
-<p>
-  <strong>Currentprice:</strong>
-  <%= @product.currentprice %>
-</p>
-
-<p>
-  <strong>Num:</strong>
-  <%= @product.num %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @product.status %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+          <%= link_to '编辑', edit_advertisement_path(@product) ,class:"btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+          <%= link_to '返回', advertisements_path,class:"btn btn-primary-outline pull-right" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -51,3 +51,98 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+
+
+
+
+<%= form_for(@seller) do |f| %>
+    <fieldset>
+      <% if @seller.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@seller.errors.count, "error") %> prohibited this admin from being saved:</h2>
+
+            <ul>
+              <% @seller.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+
+
+      <table class="col-lg-8">
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :商家管理ID %></td>
+            <td><%= f.text_field :selleradmin_id, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :商家姓名 %></td>
+            <td><%= f.text_field :name, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家简介 %></td>
+            <td><%= f.text_field :summary, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家电话 %></td>
+            <td><%= f.text_field :tel, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家地址 %></td>
+            <td><%= f.text_field :adress, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家ＬＯＧＯ %></td>
+            <td><%= f.text_field :logo, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :提示信息 %></td>
+            <td><%= f.text_field :hint, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家位置 %></td>
+            <td><%= f.text_field :location, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div>
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家状态 %></td>
+            <td >
+              <div style="display: none;">
+                <%= f.number_field :status, value:1, class:"form-control" %>
+              </div>
+
+              <div class="toggle-switch text-toggle-switch" data-off-label="停用" data-on="primary" data-on-label="正常">
+                <% if @seller.status == 0 %>
+                    <input id="statuschange" name="statuschange" type="checkbox" onchange="javascript:adminstatuschange()">
+                <% else %>
+                    <input checked="" id="statuschange" name="statuschange" type="checkbox" onchange="javascript:adminstatuschange()">
+                <% end %>
+              </div>
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <td align="right" colspan="2" style="padding: 0px;"><div class="actions">
+            <%= f.submit :"确定", class:"btn btn-primary-outline pull-right" %></td>
+          </div>
+        </tr>
+      </table>
+    </fieldset>
+<% end %>

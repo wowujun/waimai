@@ -1,44 +1,53 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @advertisement.title %>
-</p>
+<%= render 'head'%>
+<div class="container fluid-height clearfix">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class="heading"><i class="icon-bullhorn"></i>&nbsp; 广告信息</h2>
+      <div class="widget-container fluid-height clearfix" style="padding: 10px;">
+        <div class="col-lg-6">
+          <p>
+            <span class="col-sm-2" style="text-align: right;">标题:</span>
+            <%= @advertisement.title %>
+          </p>
 
-<p>
-  <strong>Renderto:</strong>
-  <%= @advertisement.renderto %>
-</p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">跳转到:</span>
+            <%= @advertisement.renderto %>
+          </p>
 
-<p>
-  <strong>Image:</strong>
-  <%= @advertisement.image %>
-</p>
 
-<p>
-  <strong>Status:</strong>
-  <%= @advertisement.status %>
-</p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">状态:</span>
+            <%= @advertisement.status %>
+          </p>
 
-<p>
-  <strong>Startdate:</strong>
-  <%= @advertisement.startdate %>
-</p>
-
-<p>
-  <strong>Enddate:</strong>
-  <%= @advertisement.enddate %>
-</p>
-
-<p>
-  <strong>Starttime:</strong>
-  <%= @advertisement.starttime %>
-</p>
-
-<p>
-  <strong>Endtime:</strong>
-  <%= @advertisement.endtime %>
-</p>
-
-<%= link_to 'Edit', edit_advertisement_path(@advertisement) %> |
-<%= link_to 'Back', advertisements_path %>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">开始日期:</span>
+            <%= @advertisement.startdate %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">结束日期:</span>
+            <%= @advertisement.enddate %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">开始时间:</span>
+            <%= @advertisement.starttime %>
+          </p>
+          <p>
+            <span class="col-sm-2" style="text-align: right;">结束时间:</span>
+            <%= @advertisement.endtime %>
+          </p>
+          <%= link_to '编辑', edit_advertisement_path(@advertisement) ,class:"btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+          <%= link_to '返回', advertisements_path,class:"btn btn-primary-outline pull-right" %>
+        </div>
+        <div class="col-lg-6">
+          <h4 class="icon-desktop">&nbsp;图片</h4>
+          <p>
+            <%=@advertisement.image.html_safe%>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

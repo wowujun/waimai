@@ -1,43 +1,52 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Products</h1>
+<%=render 'head' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Unit</th>
-      <th>Productcla</th>
-      <th>Seller</th>
-      <th>Name</th>
-      <th>Image</th>
-      <th>Costprice</th>
-      <th>Currentprice</th>
-      <th>Num</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container fluid-height clearfix">
 
-  <tbody>
-    <% @products.each do |product| %>
+  <h2 class="heading" style="margin-top: 15px;">产品设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
       <tr>
-        <td><%= product.unit_id %></td>
-        <td><%= product.productcla_id %></td>
-        <td><%= product.seller_id %></td>
-        <td><%= product.name %></td>
-        <td><%= product.image %></td>
-        <td><%= product.costprice %></td>
-        <td><%= product.currentprice %></td>
-        <td><%= product.num %></td>
-        <td><%= product.status %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th></th>
+        <th class="heading">单位</th>
+        <th class="heading">类别</th>
+        <th class="heading">商家</th>
+        <th class="heading">姓名</th>
+        <th class="heading">图片</th>
+        <th class="heading">原价</th>
+        <th class="heading">现价</th>
+        <th class="heading">数量</th>
+        <th class="heading">状态</th>
+        <th class="heading">操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
 
-<%= link_to 'New Product', new_product_path %>
+      <% @products.each do |product| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= product.unit_id %></td>
+            <td><%= product.productcla_id %></td>
+            <td><%= product.seller_id %></td>
+            <td><%= product.name %></td>
+            <td><%= product.image %></td>
+            <td><%= product.costprice %></td>
+            <td><%= product.currentprice %></td>
+            <td><%= product.num %></td>
+            <td><%= product.status %></td>
+            <td width="100px" align="center"><%= link_to "", product,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', product, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
+
+    </table>
+
+    <br>
+
+
+
+    <%= link_to ' 新建配送员', new_product_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

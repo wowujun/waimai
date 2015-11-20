@@ -1,49 +1,102 @@
+
+<script type="text/javascript" language="javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#img1')
+                        .attr('src', e.target.result)
+                //.width(300)
+                //.height(200);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+</script>
+
+
+
+
+
 <%= form_for(@advertisement) do |f| %>
-  <% if @advertisement.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@advertisement.errors.count, "error") %> prohibited this advertisement from being saved:</h2>
+    <fieldset>
+      <% if  @advertisement.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize( @advertisement.errors.count, "error") %> prohibited this admin from being saved:</h2>
 
-      <ul>
-      <% @advertisement.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+              <% @advertisement.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :renderto %><br>
-    <%= f.text_field :renderto %>
-  </div>
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.text_field :image %>
-  </div>
-  <div class="field">
-    <%= f.label :status %><br>
-    <%= f.number_field :status %>
-  </div>
-  <div class="field">
-    <%= f.label :startdate %><br>
-    <%= f.datetime_select :startdate %>
-  </div>
-  <div class="field">
-    <%= f.label :enddate %><br>
-    <%= f.datetime_select :enddate %>
-  </div>
-  <div class="field">
-    <%= f.label :starttime %><br>
-    <%= f.datetime_select :starttime %>
-  </div>
-  <div class="field">
-    <%= f.label :endtime %><br>
-    <%= f.datetime_select :endtime %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+      <table class="col-lg-12">
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :标题 %></td>
+            <td><%= f.text_field  :title, class:"form-control" %></td>
+          </div>
+        </tr>
+
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :跳转位置 %></td>
+            <td><%= f.text_field :renderto, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+          <div>
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :图片 %></td>
+            <td >
+              <%= f.kindeditor :image, class:"form-control"%>
+            </td>
+          </div>
+        </tr>
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :状态 %></td>
+            <td ><%= f.number_field :status, class:"form-control" %></td>
+          </div>
+        </tr>
+        <tr>
+        <div class="form-group">
+          <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :开始日期 %></td>
+          <td > <%= f.datetime_select :startdate %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group">
+          <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;">  <%= f.label :结束日期 %></td>
+          <td > <%= f.datetime_select :enddate %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group">
+          <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;">  <%= f.label :开始时间 %></td>
+          <td ><%= f.datetime_select :starttime %></td>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group">
+          <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"> <%= f.label :结束时间 %></td>
+          <td ><%= f.datetime_select :endtime %></td>
+        </div>
+        </tr>
+
+
+        <tr>
+          <td align="right" colspan="2" style="padding: 0px;"><div class="actions">
+            <%= f.submit :"确定", class:"btn btn-primary-outline pull-right" %>
+          </div></td>
+        </tr>
+      </table>
+    </fieldset>
 <% end %>
+
+
+

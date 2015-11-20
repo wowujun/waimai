@@ -1,27 +1,36 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Listing Units</h1>
+<%=render 'head' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container fluid-height clearfix">
 
-  <tbody>
-    <% @units.each do |unit| %>
+  <h2 class="heading" style="margin-top: 15px;">产品单位设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
       <tr>
-        <td><%= unit.name %></td>
-        <td><%= link_to 'Show', unit %></td>
-        <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
-        <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th></th>
+        <th class="heading">姓名</th>
+        <th class="heading">操作</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
 
-<%= link_to 'New Unit', new_unit_path %>
+      <% @units.each do |unit| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= unit.name %></td>
+            <td width="100px" align="center"><%= link_to "", unit,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', unit, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
+
+    </table>
+
+    <br>
+
+
+
+    <%= link_to ' 新建配送员', new_unit_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

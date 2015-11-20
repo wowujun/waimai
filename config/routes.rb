@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'logins/index'
+  resources :logins
   resources :units
   resources :selleradmins
   resources :sellers
