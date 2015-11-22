@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
-  get 'logins/index'
+  resources :clas
+  resources :couriers
+  get 'sides/index'
+
+  get 'sides/show'
+
+  get 'ctsinits/index'
+
+  get 'logins/new'
+
+  get 'logins/new'
   resources :logins
   resources :units
   resources :selleradmins

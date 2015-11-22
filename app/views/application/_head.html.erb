@@ -1,24 +1,18 @@
 <header id="header">
-    <div class="top-bar">
+    <div class="top-bar" style="background-color: #f9fafa">
       <div class="slidedown collapse">
-        <div class="container">
-          <div class="phone-email pull-left">
-            <a><i class="icon-phone"></i> Call Us : +880 41 723 272</a>
-            <a href="mail%40example.html"><i class="icon-envelope"></i> Email : mail@example.com</a>
-          </div>
-          <div class="pull-right">
-            <ul class="social pull-left">
-              <li class="facebook"><a href="#"><i class="icon-facebook"></i></a></li>
-              <li class="twitter"><a href="#"><i class="icon-twitter"></i></a></li>
-              <li class="dribbble"><a href="#"><i class="icon-dribbble"></i></a></li>
-              <li class="linkedin"><a href="#"><i class="icon-linkedin"></i></a></li>
-              <li class="rss"><a href="#"><i class="icon-rss"></i></a></li>
-            </ul>
-            <div id="search-form" class="pull-right">
-              <form action="#" method="get">
-                <input type="text" class="search-text-box">
-              </form>
-            </div>
+        <div class="container" >
+          <div style="float: right;margin-right: -22.7%;">
+            <ul>
+            <li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: #0062cc">
+              <%= session[:admin_name]%><b class="caret"></b></a>
+              <ul class="dropdown-menu" style="margin-top: 8px;">
+                <li><a href="/logins/new" data-no-turbolink>
+                  <i class="icon-signout">退出</i></a>
+                </li>
+              </ul>
+            </li>
+                </ul>
           </div>
         </div>
       </div>
@@ -39,18 +33,9 @@
             <li><a href="/customers">
               <span aria-hidden="true" class="icon-jpy"></span>用户</a>
             </li>
-            <li class="dropdown"><a data-toggle="dropdown" href="#">
-              <span aria-hidden="true" ><i class="icon-gears"></i></span>商家<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to "商家注册", selleradmins_path %>
-                </li>
-                <li>
-                  <%= link_to "商家信息管理", products_path %>
-                </li>
-              </ul>
+            <li><a href="/sellers">
+              <span aria-hidden="true" class="icon-jpy"></span>商家</a>
             </li>
-
             <li class="dropdown"><a data-toggle="dropdown" href="#">
               <span aria-hidden="true" ><i class="icon-gears"></i></span>产品<b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -58,7 +43,7 @@
                   <%= link_to "产品管理", products_path %>
                 </li>
                 <li>
-                  <%= link_to "产品类型", productclas_path %>
+                  <%= link_to "产品分类设置", productclas_path %>
                 </li>
                 <li>
                   <%= link_to "单位设置", units_path %>
@@ -80,7 +65,7 @@
                 </li>
               </ul>
             </li>
-            <li><a href="/diliverymen">
+            <li><a href="/couriers">
               <span aria-hidden="true" class="icon-jpy"></span>配送员</a>
             </li>
           </ul>

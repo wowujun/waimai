@@ -1,0 +1,27 @@
+
+<%=render 'head' %>
+<div class="container fluid-height clearfix">
+  <h2 class="heading" style="margin-top: 15px;">商家分类设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <th class="heading">名称</th>
+        <th class="heading">操作</th>
+      </tr>
+      </thead>
+      <% @clas.each do |cla| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= cla.name %></td>
+            <td width="100px" align="center"><%= link_to "", cla,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', cla, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
+    </table>
+    <br>
+    <%= link_to ' 新建产品分类', new_cla_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

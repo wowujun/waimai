@@ -1,0 +1,39 @@
+<%=render 'head' %>
+
+<div class="container fluid-height clearfix">
+
+  <h2 class="heading" style="margin-top: 15px;">配送员设置</h2>
+  <div class="widget-container fluid-height clearfix">
+    <table class="table table-hover table-bordered table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        <th class="heading">姓名</th>
+        <th class="heading">微信ID</th>
+        <th class="heading">状态</th>
+        <th class="heading">操作</th>
+      </tr>
+      </thead>
+
+
+      <% @couriers.each do |courier| %>
+          <tr>
+            <td width="30px"><i class="heading icon-user"></i></td>
+            <td><%= courier.name %></td>
+            <td><%= courier.weichat_id %></td>
+            <td><%= courier.status %></td>
+            <td width="100px" align="center"><%= link_to "", courier,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', courier, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+          </tr>
+      <% end %>
+
+    </table>
+
+    <br>
+
+
+
+    <%= link_to ' 新建配送员', new_courier_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+  </div>
+</div>
+

@@ -1,18 +1,28 @@
+<script>
 
+    $(window).load(function() {
+        return $(".login-container").addClass("active");
+    });
+
+
+</script>
+
+
+
+<body class="login1">
 <!-- Login Screen -->
 <div class="login1">
   <div class="login-wrapper">
     <div class="login-container">
       <div style="height: 50px;"></div>
-
       <div class="heading">
-        <h1 style="color: #0088FF">zelong</h1>
+        <h1 style="color: #0088FF">管理系统</h1>
       </div>
       <!--<form action="http://sharpandnimble.com/se7en/demo/index.html">-->
       <%= form_for(:login, url: logins_path) do |f| %>
           <div class="form-group">
             <!--<input class="form-control" placeholder="Username or Email" type="text">-->
-            <%= f.text_field :name, class:"form-control", placeholder:"用户名" %>
+            <%= f.text_field :loginname, class:"form-control", placeholder:"用户名" %>
           </div>
           <div class="form-group">
             <!--<input class="form-control" placeholder="Password" type="text">-->
@@ -31,5 +41,12 @@
     </div>
   </div>
 </div>
+<!-- End Login Screen -->
+</body>
+
+
+
+
+
 
 

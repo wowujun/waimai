@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151120034110) do
+ActiveRecord::Schema.define(version: 20151122092408) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(version: 20151120034110) do
     t.datetime "enddate"
     t.datetime "starttime"
     t.datetime "endtime"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "clas", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "couriers", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "weichat_id", limit: 255
+    t.integer  "status",     limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
@@ -108,17 +122,19 @@ ActiveRecord::Schema.define(version: 20151120034110) do
   end
 
   create_table "sellers", force: :cascade do |t|
-    t.string   "selleradmin_id", limit: 255
-    t.string   "name",           limit: 255
-    t.string   "summary",        limit: 255
-    t.string   "tel",            limit: 255
-    t.string   "address",        limit: 255
-    t.string   "logo",           limit: 255
-    t.string   "hint",           limit: 255
-    t.string   "location",       limit: 255
-    t.integer  "status",         limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "name",            limit: 255
+    t.string   "summary",         limit: 255
+    t.string   "tel",             limit: 255
+    t.string   "address",         limit: 255
+    t.string   "logo",            limit: 255
+    t.string   "hint",            limit: 255
+    t.string   "location",        limit: 255
+    t.integer  "status",          limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "loginname",       limit: 255
+    t.string   "password_digest", limit: 255
+    t.string   "cla_id",          limit: 255
   end
 
   create_table "units", force: :cascade do |t|

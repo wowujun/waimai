@@ -1,9 +1,9 @@
 class LoginsController < ApplicationController
-  def index
+  def new
   end
-  def create
 
-    admin = Admin.find_by(name:params[:login][:name])
+  def create
+    admin = Admin.find_by(loginname:params[:login][:loginname])
     if admin && admin.authenticate(params[:login][:password])
       session[:admin_id]= admin.id
       session[:admin_name]=admin.name
@@ -14,4 +14,6 @@ class LoginsController < ApplicationController
       redirect_to action: 'new',id:0
     end
   end
+
+
 end

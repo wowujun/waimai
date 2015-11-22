@@ -530,11 +530,12 @@ jQuery(document).ready(function () {
 /*	Tabs Control Section
 /*----------------------------------------------------*/
 
-
+jQuery(document).ready(function () {
 	jQuery("#horizontal-tabs").tytabs({
 		tabinit: "1",
 		fadespeed: "fast"
 	});
+});
 	jQuery("#horizontal-tabs.two").tytabs({
 		tabinit: "1",
 		prefixtabs: "tab_two",

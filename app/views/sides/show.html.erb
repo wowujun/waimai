@@ -1,0 +1,102 @@
+<div id="main">
+  <div class="fullwidthbanner-container">
+    <div class="fullwidthbanner rslider">
+      <ul>
+        <li data-delay="6000" data-masterspeed="300" data-transition="fade">
+          <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%></div>
+        </li>
+        <li data-transition="fade" data-slotamount="1" data-masterspeed="300">
+          <%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%>
+        <!-- THE FIRST SLIDE -->  <% @advertisements.each do |advertisement| %>
+            <li data-delay="6000" data-masterspeed="300" data-transition="fade">
+              <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%><%=advertisement.image.html_safe%></div>
+            </li>
+        <%end%>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<!-- Tab Start -->
+<div class="widget tabs">
+  <div id="horizontal-tabs">
+    <ul class="tabs">
+      <li id="tab1"  class="current">Popular</li>
+      <li id="tab2" >Recent</li>
+    </ul>
+    <div class="contents">
+      <div class="tabscontent" id="content1" style="display: block;">
+        <ul class="posts">
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">27 July 2013</span>
+          </li>
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">30 July 2013</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tabscontent" id="content2">
+        <ul class="posts">
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">27 July 2013</span>
+          </li>
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">30 July 2013</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tab End -->
+
+<div class="widget tabs">
+  <div id="horizontal-tabs">
+    <ul class="tabs">
+      <li id="tab1"  class="current">Popular</li>
+      <li id="tab2" >Recent</li>
+    </ul>
+    <div class="contents">
+      <div class="tabscontent" id="content1" style="display: block;">
+        <ul class="posts">
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">27 July 2013</span>
+          </li>
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">30 July 2013</span>
+          </li>
+        </ul>
+      </div>
+      <div class="tabscontent" id="content2">
+        <ul class="posts">
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">27 July 2013</span>
+          </li>
+          <li>
+            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
+            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
+            <span class="color">30 July 2013</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

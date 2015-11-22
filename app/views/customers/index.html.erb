@@ -1,8 +1,5 @@
-
 <%=render 'head' %>
-
 <div class="container fluid-height clearfix">
-
   <h2 class="heading" style="margin-top: 15px;">用户设置</h2>
   <div class="widget-container fluid-height clearfix">
     <table class="table table-hover table-bordered table-striped">
@@ -19,8 +16,6 @@
         <th class="heading">操作</th>
       </tr>
       </thead>
-
-
       <% @customers.each do |customer| %>
           <tr>
             <td width="30px"><i class="heading icon-user"></i></td>
@@ -35,14 +30,8 @@
                   <%= link_to '', customer, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>
       <% end %>
-
     </table>
-
     <br>
-
-
-
-    <%= link_to ' 创建管理员', new_customer_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
   </div>
 </div>
 

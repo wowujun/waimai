@@ -1,17 +1,14 @@
-
-
 <%=render 'head' %>
-
 <div class="container fluid-height clearfix">
-
-  <h2 class="heading" style="margin-top: 15px;">配送员设置</h2>
+  <h2 class="heading" style="margin-top: 15px;">商家设置</h2>
   <div class="widget-container fluid-height clearfix">
     <table class="table table-hover table-bordered table-striped">
       <thead>
       <tr>
         <th></th>
-        <th class="heading">商家管理ID</th>
         <th class="heading">商家姓名</th>
+        <th class="heading">商家登录名</th>
+        <th class="heading">商家密码</th>
         <th class="heading">商家简介</th>
         <th class="heading">商家电话</th>
         <th class="heading">商家地址</th>
@@ -20,17 +17,15 @@
         <th class="heading">商家位置</th>
         <th class="heading">状态</th>
         <th class="heading">操作</th>
-
-
       </tr>
       </thead>
-
-
       <% @sellers.each do |seller| %>
           <tr>
             <td width="30px"><i class="heading icon-user"></i></td>
-            <td><%= seller.selleradmin_id %></td>
+            <td><%= seller.cla_id %></td>
             <td><%= seller.name %></td>
+            <td><%= seller.loginname %></td>
+            <td>***********</td>
             <td><%= seller.summary %></td>
             <td><%= seller.tel %></td>
             <td><%= seller.address %></td>
@@ -42,14 +37,9 @@
               <%= link_to '', seller, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>
       <% end %>
-
     </table>
-
     <br>
-
-
-
-    <%= link_to ' 新建配送员', new_seller_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
+    <%= link_to ' 商家设置', new_seller_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
   </div>
 </div>
 

@@ -1,0 +1,69 @@
+<div id="main">
+  <div class="fullwidthbanner-container">
+    <div class="fullwidthbanner rslider">
+      <ul>
+        <li data-delay="6000" data-masterspeed="300" data-transition="fade">
+          <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%></div>
+        </li>
+        <li data-delay="6000" data-masterspeed="300" data-transition="fade">
+          <div class="slotholder"><%=image_tag('banner02.png','data-fullwidthcentering'=>'on',alt:'')%></div>
+        </li>
+        <!-- THE FIRST SLIDE -->  <% @advertisements.each do |advertisement| %>
+        <li data-delay="6000" data-masterspeed="300" data-transition="fade">
+          <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%><%=advertisement.image.html_safe%></div>
+        </li>
+            <%end%>
+      </ul>
+    </div>
+  </div>
+  <div class="slogan">
+    <div class="container">
+      <div class="row">
+        <div class="slogan-content">
+          <div class="col-lg-9 col-md-9">
+            <h2 class="slogan-title">特色小吃</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="slogan bottom-pad-small">
+      <div class="container">
+        <div class="row">
+          <div class="slogan-content">
+            <div class="col-lg-9 col-md-9">
+              <h2 class="slogan-title">We design and develop the best website’s for customers!</h2>
+            </div>
+            <div class="col-lg-3 col-md-3">
+              <div class="get-started">
+                <i class="icon-angle-right icon-4x"></i>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% @sellers.each do |seller| %>
+  <div class="slogan bottom-pad-small">
+    <div class="container">
+      <div class="row">
+        <div class="slogan-content">
+          <div class="col-lg-9 col-md-9">
+            <%=seller.image.html_safe%><%=seller.name%>
+          </div>
+          <div class="col-lg-3 col-md-3">
+            <div class="get-started">
+              <i class="icon-angle-right icon-4x"></i>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+      <%end%>
+  </div>
+</div>
+
+

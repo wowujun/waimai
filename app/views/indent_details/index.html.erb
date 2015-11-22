@@ -1,77 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Indent Details</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Indent</th>
-      <th>Product</th>
-      <th>Name</th>
-      <th>Num</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @indent_details.each do |indent_detail| %>
-      <tr>
-        <td><%= indent_detail.indent_id %></td>
-        <td><%= indent_detail.product_id %></td>
-        <td><%= indent_detail.name %></td>
-        <td><%= indent_detail.num %></td>
-        <td><%= indent_detail.price %></td>
-        <td><%= link_to 'Show', indent_detail %></td>
-        <td><%= link_to 'Edit', edit_indent_detail_path(indent_detail) %></td>
-        <td><%= link_to 'Destroy', indent_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Indent detail', new_indent_detail_path %>
-
-
-
 <%=render 'head' %>
 
 <div class="container fluid-height clearfix">
 
-  <h2 class="heading" style="margin-top: 15px;">配送员设置</h2>
+  <h2 class="heading" style="margin-top: 15px;">订单明细查询</h2>
   <div class="widget-container fluid-height clearfix">
     <table class="table table-hover table-bordered table-striped">
       <thead>
       <tr>
         <th></th>
-        <th class="heading">姓名</th>
-        <th class="heading">微信ID</th>
-        <th class="heading">状态</th>
+        <th class="heading">订单ID</th>
+        <th class="heading">产品ID</th>
+        <th class="heading">产品名称</th>
+        <th class="heading">数量</th>
+        <th class="heading">价格</th>
         <th class="heading">操作</th>
       </tr>
       </thead>
 
 
-      <% @diliverymen.each do |diliveryman| %>
+      <% @indent_details.each do |indent_detail| %>
           <tr>
             <td width="30px"><i class="heading icon-user"></i></td>
-            <td><%= diliveryman.name %></td>
-            <td><%= diliveryman.weichat_id %></td>
-            <td><%= diliveryman.status %></td>
-            <td width="100px" align="center"><%= link_to "", diliveryman,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
-              <%= link_to '', diliveryman, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
+            <td><%= indent_detail.indent_id %></td>
+            <td><%= indent_detail.product_id %></td>
+            <td><%= indent_detail.name %></td>
+            <td><%= indent_detail.num %></td>
+            <td><%= indent_detail.price %></td>
+            <td width="100px" align="center"><%= link_to "", indent_detail,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
+              <%= link_to '', indent_detail, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>
       <% end %>
 
     </table>
 
     <br>
-
-
-
-    <%= link_to ' 订单明细', new_indent_detail_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
   </div>
 </div>
 
