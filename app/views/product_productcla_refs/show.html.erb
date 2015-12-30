@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Productcla:</strong>
+  <%= @product_productcla_ref.productcla_id %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @product_productcla_ref.product_id %>
+</p>
+
+<%= link_to 'Edit', edit_product_productcla_ref_path(@product_productcla_ref) %> |
+<%= link_to 'Back', product_productcla_refs_path %>

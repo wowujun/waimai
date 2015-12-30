@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151122092408) do
+ActiveRecord::Schema.define(version: 20151126024007) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "name",            limit: 255
@@ -80,16 +80,40 @@ ActiveRecord::Schema.define(version: 20151122092408) do
   end
 
   create_table "indents", force: :cascade do |t|
-    t.string   "customer_id",    limit: 255
-    t.string   "diliveryman_id", limit: 255
-    t.string   "number",         limit: 255
-    t.integer  "status",         limit: 4
-    t.integer  "orderstatus",    limit: 4
-    t.string   "sum",            limit: 255
+    t.string   "customer_id", limit: 255
+    t.string   "number",      limit: 255
+    t.integer  "status",      limit: 4
+    t.integer  "orderstatus", limit: 4
+    t.string   "sum",         limit: 255
     t.datetime "bltime"
     t.datetime "finishtime"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "courier_id",  limit: 255
+  end
+
+  create_table "kindeditor_assets", force: :cascade do |t|
+    t.string   "asset",      limit: 255
+    t.integer  "file_size",  limit: 4
+    t.string   "file_type",  limit: 255
+    t.integer  "owner_id",   limit: 4
+    t.string   "asset_type", limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_productcla_refs", force: :cascade do |t|
+    t.integer  "productcla_id", limit: 4
+    t.integer  "product_id",    limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  create_table "productcla_product_refs", force: :cascade do |t|
+    t.integer  "productcla_id", limit: 4
+    t.integer  "product_id",    limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "productclas", force: :cascade do |t|

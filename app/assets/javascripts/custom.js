@@ -536,18 +536,18 @@ jQuery(document).ready(function () {
 		fadespeed: "fast"
 	});
 });
-	jQuery("#horizontal-tabs.two").tytabs({
-		tabinit: "1",
-		prefixtabs: "tab_two",
-		prefixcontent: "content_two",
-		fadespeed: "fast"
-	});
-	jQuery("#horizontal-tabs.three").tytabs({
-		tabinit: "1",
-		prefixtabs: "tab_three",
-		prefixcontent: "content_three",
-		fadespeed: "fast"
-	});
+
+
+jQuery(document).ready(function () {
+    jQuery("#horizontal-tabs.horizontal-tabs").tytabs({
+        tabinit: "3",
+        fadespeed: "fast"
+
+    });
+});
+
+
+
 	jQuery("#horizontal-tabs.four").tytabs({
 		tabinit: "1",
 		prefixtabs: "tab_four",

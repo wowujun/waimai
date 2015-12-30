@@ -657,6 +657,7 @@ h2.title {
 
 }
 
+
 #horizontal-tabs ul.tabs li {
     background: #fafafa;
     border-right: 1px solid #ddd;
@@ -701,7 +702,6 @@ h2.title {
     margin-bottom: 15px;
     padding-bottom: 10px;
     overflow: hidden;
-    border-bottom: 1px solid #f8f8f8;
 }
 
 .tabs ul.posts li img {
@@ -929,9 +929,10 @@ ol.commentlist li:first-child {
 
 /* Slogan Area */
 .slogan {
-    min-height: 100px;
+    max-height: 70px;
     background: #fafafa;
     width: 100%;
+
     border-top: 1px solid #DDD;
     border-bottom: 1px solid #DDD;
     -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
@@ -939,7 +940,7 @@ ol.commentlist li:first-child {
 }
 
 .slogan-content {
-    padding: 25px 0;
+    padding: -25px 0;
 }
 
 .slogan-title {
@@ -2136,7 +2137,7 @@ ul#projects-carousel {
 
 .post-body {
     padding: 4px;
-    background: url("../img/bg_off.png") repeat;
+    background: url("../bg_off.png") repeat;
     border: 1px solid #DDDDDD;
     border-radius: 3px;
 }
@@ -2343,18 +2344,16 @@ header .social li.rss:hover,footer .social li.rss:hover {
 
 .team-member {
     display: block;
-    margin: 0 auto 50px;
     width: 100%;
-    max-width: 350px;
+    max-width: 100%;
     padding: 0;
 }
 
 .team-member-image {
     float: none;
     overflow: visible;
-    height: 0;
-    width: 100%;
-    padding-bottom: 100%;
+    height: 1%;
+    width: 50%;
 }
 
 .team-member-image img {
@@ -2643,7 +2642,7 @@ body.login1 .login-container p.signup {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
     padding: 0;
     min-height: 45px;
-    height: 72px;
+    height: 110px;
     width: 100%;
     border: 0;
     -webkit-transition: all 0.3s;
@@ -2720,7 +2719,7 @@ body.login1 .login-container p.signup {
     width: 28px;
     height: 28px;
     font-size: 28px;
-    color: #999999; }
+    color:  #f8f8f8; }
 .navbar .container-fluid.top-bar .nav > li > a p.counter {
     position: absolute;
     top: 5px;
@@ -3576,7 +3575,7 @@ th:active {
 .modal-open .modal-shiftfix,
 .modal-open .modal-shiftfix .navbar-fixed-top,
 .modal-open .modal-shiftfix .navbar-fixed-bottom {
-    overflow-y: scroll; }
+     }
 
 /*  List groups */
 /*----------------------------------------------------------------------------------- */
@@ -5661,7 +5660,7 @@ body.fourofour .fourofour-container a.btn:hover {
         border-bottom-color: #007aff;
         color: #007aff; }
     .navbar .container-fluid.main-nav .nav-collapse .nav > li > .dropdown-menu li a:hover, .navbar .container-fluid.main-nav .nav-collapse .nav > li > .dropdown-menu li a:active {
-        color: black;
+
         border-bottom-color: black; }
     .navbar .container-fluid.main-nav .nav-collapse .nav > li > a {
         display: block;
@@ -5673,7 +5672,7 @@ body.fourofour .fourofour-container a.btn:hover {
         color: #777777;
         border-bottom: 1px solid #aaaaaa; }
     .navbar .container-fluid.main-nav .nav-collapse .nav > li > a:hover, .navbar .container-fluid.main-nav .nav-collapse .nav > li > a:active {
-        color: black;
+
         border-bottom-color: black;
         background: none !important; }
     .navbar .container-fluid.main-nav .nav-collapse .nav > li > a span {
@@ -5952,4 +5951,46 @@ a.current-link:hover {
 
 
 
-/***/
+/***/.opacity .radio, .opacity .checkbox {
+         margin: 0 0 10px; }
+.opacity .radio-inline, .opacity .checkbox-inline {
+    padding-top: 9px;
+    margin-right: 20px; }
+.opacity .radio-inline + .radio-inline, .opacity .radio-inline + .checkbox-inline, .opacity .checkbox-inline + .radio-inline, .opacity .checkbox-inline + .checkbox-inline {
+    margin-left: 0; }
+.opacity input[type="checkbox"], .opacity input[type="radio"] {
+    display: none; }
+.opacity input[type="checkbox"] + span:before, .opacity input[type="radio"] + span:before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-left: -20px;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #c8c8c8; }
+.opacity input[type="checkbox"]:checked + span:before {
+    background: #007aff url("../checkmark.png") no-repeat center center;
+    border-color: #007aff; }
+@media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+    .opacity input[type="checkbox"]:checked + span:before {
+        background-image: url("../checkmark%402x.png");
+        background-size: 14px 14px; } }
+.opacity input[type="radio"] {
+    display: none; }
+.opacity input[type="radio"] + span {
+    position: relative; }
+.opacity input[type="radio"] + span:before {
+    border-radius: 50%; }
+.opacity input[type="radio"]:checked + span:after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    top: 6px;
+    left: -15px;
+    background-color: #007aff;
+    border-radius: 50%;
+    display: block; }

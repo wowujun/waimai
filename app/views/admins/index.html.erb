@@ -1,7 +1,6 @@
 <%=render 'head' %>
 
 <div class="container fluid-height clearfix">
-
   <h2 class="heading" style="margin-top: 15px;">管理员设置</h2>
   <div class="widget-container fluid-height clearfix">
     <table class="table table-hover table-bordered table-striped">
@@ -15,7 +14,6 @@
         <th class="heading">操作</th>
       </tr>
       </thead>
-
       <% @admins.each do |admin| %>
           <tr>
             <td width="30px"><i class="heading icon-user"></i></td>
@@ -40,13 +38,8 @@
             <% end %>
           </tr>
       <% end %>
-
     </table>
-
     <br>
-
-
-
     <%= link_to ' 创建管理员', new_admin_path, class: "icon-plus btn btn-primary-outline pull-right",'data-no-turbolink'=>true%>
   </div>
 </div>

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require kindeditor
 //= require turbolinks
 
 //= require  jquery.min.js
@@ -33,7 +34,7 @@
 //= require spectrum.js
 //= require switcher.js
 //= require custom.js
+//= require bootstrap-switch.min.js
 
 
 
-//= require_tree .

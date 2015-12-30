@@ -1,24 +1,25 @@
 <header id="header">
-    <div class="top-bar" style="background-color: #f9fafa">
-      <div class="slidedown collapse">
+
+    <div class="navbar">
+      <div class="top-bar" style="background-color: #f9fafa">
+      <div class="slidedown-collapse">
         <div class="container" >
           <div style="float: right;margin-right: -22.7%;">
             <ul>
-            <li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: #0062cc">
-              <%= session[:admin_name]%><b class="caret"></b></a>
-              <ul class="dropdown-menu" style="margin-top: 8px;">
-                <li><a href="/logins/new" data-no-turbolink>
-                  <i class="icon-signout">退出</i></a>
-                </li>
-              </ul>
-            </li>
+              <li class="dropdown user hidden-xs"><a data-toggle="dropdown" class="dropdown-toggle" href="#" style="color: #0062cc">
+                <%= session[:admin_name]%><b class="caret"></b></a>
+                <ul class="dropdown-menu" style="margin-top: 8px;">
+                  <li><a href="/logins/new" data-no-turbolink>
+                    <i class="icon-signout">退出</i></a>
+                  </li>
                 </ul>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
     </div>
-    <div class="navbar">
       <div class="container-fluid main-nav clearfix">
         <div class="nav-collapse">
           <ul class="nav">
@@ -31,13 +32,16 @@
               </ul>
             </li>
             <li><a href="/customers">
-              <span aria-hidden="true" class="icon-jpy"></span>用户</a>
+              <span aria-hidden="true" class="icon-male"></span>用户</a>
+            </li>
+            <li><a href="/clas">
+              <span aria-hidden="true" class="icon-sitemap"></span>商家类别设置</a>
             </li>
             <li><a href="/sellers">
-              <span aria-hidden="true" class="icon-jpy"></span>商家</a>
+              <span aria-hidden="true" class="icon-user"></span>商家</a>
             </li>
             <li class="dropdown"><a data-toggle="dropdown" href="#">
-              <span aria-hidden="true" ><i class="icon-gears"></i></span>产品<b class="caret"></b></a>
+              <span aria-hidden="true" ><i class="icon-th-list"></i></span>产品<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                   <%= link_to "产品管理", products_path %>
@@ -51,11 +55,11 @@
               </ul>
             </li>
             <li><a href="/advertisements">
-              <span aria-hidden="true" class="icon-jpy"></span>广告</a>
+              <span aria-hidden="true" class="icon-picture"></span>广告</a>
             </li>
 
             <li class="dropdown"><a data-toggle="dropdown" href="#">
-              <span aria-hidden="true" ><i class="icon-gears"></i></span>订单<b class="caret"></b></a>
+              <span aria-hidden="true" ><i class="icon-calendar"></i></span>订单<b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <li>
                   <%= link_to "订单管理", indents_path %>
@@ -66,7 +70,7 @@
               </ul>
             </li>
             <li><a href="/couriers">
-              <span aria-hidden="true" class="icon-jpy"></span>配送员</a>
+              <span aria-hidden="true" class="icon-female"></span>配送员</a>
             </li>
           </ul>
         </div>

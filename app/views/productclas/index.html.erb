@@ -14,7 +14,7 @@
       </thead>
       <% @productclas.each do |productcla| %>
           <tr>
-            <td width="30px"><i class="heading icon-user"></i></td>
+            <td width="30px"><i class="heading icon-bar-chart"></i></td>
             <td><%= productcla.name %></td>
             <td width="100px" align="center"><%= link_to "", productcla,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', productcla, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>

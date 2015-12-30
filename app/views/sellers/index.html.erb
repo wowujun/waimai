@@ -6,6 +6,7 @@
       <thead>
       <tr>
         <th></th>
+        <th class="heading">类别</th>
         <th class="heading">商家姓名</th>
         <th class="heading">商家登录名</th>
         <th class="heading">商家密码</th>
@@ -22,7 +23,12 @@
       <% @sellers.each do |seller| %>
           <tr>
             <td width="30px"><i class="heading icon-user"></i></td>
-            <td><%= seller.cla_id %></td>
+            <% @cla=@clas.find_by_id(seller.cla_id) rescue nil %>
+            <% if @cla %>
+                <td class="hidden-xs"><%= @cla.name %></td>
+            <% else %>
+                <td class="hidden-xs">&nbsp;</td>
+            <% end %>
             <td><%= seller.name %></td>
             <td><%= seller.loginname %></td>
             <td>***********</td>
@@ -32,7 +38,12 @@
             <td><%= seller.logo %></td>
             <td><%= seller.hint %></td>
             <td><%= seller.location %></td>
-            <td><%= seller.status %></td>
+            <%if seller.status==1%>
+                <td>正常</td>
+                <%else%>
+                <td>休息</td>
+                <%end%>
+
             <td width="100px" align="center"><%= link_to "", seller,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', seller, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>

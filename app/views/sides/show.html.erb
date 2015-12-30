@@ -1,102 +1,276 @@
-<div id="main">
-  <div class="fullwidthbanner-container">
-    <div class="fullwidthbanner rslider">
-      <ul>
-        <li data-delay="6000" data-masterspeed="300" data-transition="fade">
-          <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%></div>
-        </li>
-        <li data-transition="fade" data-slotamount="1" data-masterspeed="300">
-          <%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%>
-        <!-- THE FIRST SLIDE -->  <% @advertisements.each do |advertisement| %>
-            <li data-delay="6000" data-masterspeed="300" data-transition="fade">
-              <div class="slotholder"><%=image_tag('banner01.png','data-fullwidthcentering'=>'on',alt:'')%><%=advertisement.image.html_safe%></div>
+
+
+<head>
+  <meta charset="utf-8">
+
+  <script>
+      $(function(){
+          var winheight=$(window).height();
+          //$('#wrap').css('min-height',winheight-30+'px');//footer居底
+          $('.blankwhite').css('height','0px');
+          var winwidth=$(window).width();
+          //$('.contentimgcl').css('height',winwidth*0.2+'px');
+      });
+  </script>
+</head>
+
+<body onselectstart="return true;" ondragstart="return false;">
+<div id="wrap" class="clr">
+  <!--<div class="telphone"><img src="../images/tel.png"></div>-->
+  <div class="banner">
+    <!-- 	<img src="http://static.dodoca.com/images/mod/mod47/topbanner.jpg"> -->
+    <div style="width:100%;align:center;margin:0 auto;" id="imageswzi" >
+      <style>
+          .box_swipe{
+              overflow:hidden;
+              position:relative;
+          }
+          .box_swipe ul{
+              -webkit-padding-start: 0px;
+          }
+
+          .box_swipe>ol{
+              height:20px;
+              position: relative;
+              z-index:10;
+              margin-top:-25px;
+              text-align:right;
+              padding-right:15px;
+          }/* background-color:rgba(0,0,0,0.3); */
+          .box_swipe>ol>li{
+              display:inline-block;
+              margin:5px 0;
+              width:8px;
+              height:8px;
+              background-color:#757575;
+              border-radius: 8px;
+          }
+          .box_swipe>ol>li.on{
+              background-color:#ffffff;
+          }
+
+
+
+      </style>
+      <script src="js/swipe2.js" type="text/javascript"></script>
+      <div id="displayswipe" style="-webkit-transform:translate3d(0,0,0);" style="display:none;">
+        <div style="visibility: visible;" id="banner_box" class="box_swipe">
+          <ul style="list-style: none outside none; width: 4480px; transition-duration: 500ms; transform: translate3d(-1920px, 0px, 0px);">
+            <li style="width: 640px; display: table-cell; vertical-align: top;">
+              <%=image_tag('1.jpg',id:'bannerimg13203')%>
             </li>
-        <%end%>
-      </ul>
-    </div>
-  </div>
-</div>
-</div>
-<!-- Tab Start -->
-<div class="widget tabs">
-  <div id="horizontal-tabs">
-    <ul class="tabs">
-      <li id="tab1"  class="current">Popular</li>
-      <li id="tab2" >Recent</li>
-    </ul>
-    <div class="contents">
-      <div class="tabscontent" id="content1" style="display: block;">
-        <ul class="posts">
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">27 July 2013</span>
-          </li>
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">30 July 2013</span>
-          </li>
-        </ul>
-      </div>
-      <div class="tabscontent" id="content2">
-        <ul class="posts">
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">27 July 2013</span>
-          </li>
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">30 July 2013</span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Tab End -->
+            <li style="width: 640px; display: table-cell; vertical-align: top;">
+              <img src="http://pic.dodoca.com/org/3/ce/745/42b2/c2c4fc5d976c61c1213424.jpg"   id="bannerimg13202" style="width:100%;">
+            </li>
+            <li style="width: 640px; display: table-cell; vertical-align: top;">
+              <img src="http://pic.dodoca.com/org/0/3c/245/bff6/c9555a6879e03d1d16152b.jpg"   id="bannerimg16063" style="width:100%;">
+            </li>
+          </ul>
+          <ol>
+            <li class=""></li>&nbsp;
 
-<div class="widget tabs">
-  <div id="horizontal-tabs">
-    <ul class="tabs">
-      <li id="tab1"  class="current">Popular</li>
-      <li id="tab2" >Recent</li>
-    </ul>
-    <div class="contents">
-      <div class="tabscontent" id="content1" style="display: block;">
-        <ul class="posts">
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">27 July 2013</span>
-          </li>
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">30 July 2013</span>
-          </li>
-        </ul>
+            <li class=""></li>&nbsp;
+
+            <li class=""></li>&nbsp;
+
+          </ol>
+        </div>
       </div>
-      <div class="tabscontent" id="content2">
-        <ul class="posts">
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">27 July 2013</span>
-          </li>
-          <li>
-            <a href="#"><img class="img-thumbnail recent-post-img" alt="" src="img/recent-post-img.jpg"></a>
-            <p><a href="#">Lorem Ipsum is simply dummy text.</a></p>
-            <span class="color">30 July 2013</span>
-          </li>
-        </ul>
+
+      <div id="displayone" style="display:none;">
+        <img src="http://pic.dodoca.com/org/8/59/ebe/c57b/1bf60273c821ef78d72d10.jpg" alt=" "  id="onebannerimg" style="width:100%;">
       </div>
-    </div>
-  </div>
-</div>
+      <script>
+          $(function(){
+              $("#displayswipe").show();
+              $("#displayone").hide();
+              //var banner=Array;//banner列表记录
 
 
+              /*
+               var winwidth2= $("#windowwidth").val();
+               var bili=$("#bili").val();
+               bili=parseFloat(bili);
+               var height2=bili*winwidth2+"px";
+               var height2nopx=bili*winwidth2;
+
+
+               $("#imageswzi").css("height",height2);
+               $("#banner_box").css("height",height2);
+               */
+              if(3==1){
+                  $("#displayswipe").hide();
+                  $("#displayone").show();
+                  //$("#onebannerimg").css("height",height2);
+                  //var banner0=Array;//一条banner记录
+                  //$("#onebannerimg").attr("src",banner0.images);
+              }
+
+
+
+
+              new Swipe(document.getElementById('banner_box'), {
+                  speed: 500,
+                  auto: 3000,
+                  callback: function(){
+                      var lis = $(this.element).next("ol").children();
+                      lis.removeClass("on").eq(this.index).addClass("on");
+                  }
+              });
+          });
+      </script>
+
+
+
+      <!-- End SlidesJS Required -->		</div>
+  </div>
+
+
+  <div class="html">
+    <div class="stage" id="stage">
+      <section id="sec-index">
+
+        <div class="body">
+
+          <div class="list">
+            <ul>
+              <li>
+
+                <div>
+                  <h1>关于懒人</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+
+              </li>
+              <li>
+                <a href="#">
+                  <div class="list-img">
+                    <b>
+                      <%=image_tag('1.jpg')%>
+                    </b>
+                  </div>
+
+                  <div class="list-text">
+                    <h1>关于懒人</h1>
+                    <h2>这里填写简介</h2>
+                  </div>
+                </a>
+              </li><li>
+              <a href="#">
+                <div class="list-img">
+                  <b>
+                    <%=image_tag('1.jpg')%>
+                  </b>
+                </div>
+
+                <div class="list-text">
+                  <h1>懒人业务</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+              </a>
+            </li><li>
+              <a href="http://m.wsq.qq.com/160750279?wecha_id={wechat_id}">
+                <div class="list-img">
+                  <b>
+                    <%=image_tag('1.jpg')%>
+                  </b>
+                </div>
+
+                <div class="list-text">
+                  <h1>懒人课堂</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+              </a>
+            </li><li>
+              <a href="#">
+                <div class="list-img">
+                  <b>
+                    <%=image_tag('1.jpg')%>
+                  </b>
+                </div>
+
+                <div class="list-text">
+                  <h1>懒人业务</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+              </a>
+            </li><li>
+              <a href="#">
+                <div class="list-img">
+                  <b>
+                    <%=image_tag('1.jpg')%>
+                  </b>
+                </div>
+
+                <div class="list-text">
+                  <h1>懒人福利</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+              </a>
+            </li> <li>
+              <a href="#">
+                <div class="list-img">
+                  <b>
+                    <%=image_tag('1.jpg')%>
+                  </b>
+                </div>
+
+                <div class="list-text">
+                  <h1>懒人业务</h1>
+                  <h2>这里填写简介</h2>
+                </div>
+              </a>
+            </li>   </ul>
+          </div>
+
+        </div>
+      </section>
+
+
+    </div><!--.stage end-->
+  </div>
+
+
+
+
+
+
+  <footer>
+    懒人模板提供服务	</footer>
+
+
+
+
+
+  <div class="blankwhite" style="height:30px;"></div>
+
+  <script>
+
+      $(function(){
+          if (typeof WeixinJSBridge == "undefined"){
+              if( document.addEventListener ){
+                  document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+              }else if (document.attachEvent){
+                  document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                  document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+              }
+          }else{
+              onBridgeReady();
+          }
+
+          var shareTitle = '台湾生活广场';
+          var imgUrl = "";
+          var descContent = $("#div_fx_describe").text();
+          var urllink = "new.dodoca.com/7291/phonewebsite/website?id=22327#mp.weixin.qq.com";
+          wx_share_out('7291',shareTitle,imgUrl,descContent,urllink);
+      })
+
+      function onBridgeReady(){
+          WeixinJSBridge.call('showOptionMenu');
+      }
+  </script>
+  <div id="div_fx_describe" style="display:none;"></div>
+</div>
+</body>
 
 

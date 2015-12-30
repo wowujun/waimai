@@ -1,3 +1,16 @@
+<script type="text/javascript" language="JavaScript">
+    function cardtypeselect(){
+        document.getElementById("product_seller_id").value=document.getElementById("sellerid").value;
+    }
+    function cardtypeselect1(){
+        document.getElementById("product_unit_id").value=document.getElementById("unitid").value;
+    }
+    function cardtypeselect2(){
+        document.getElementById("product_productcla_id").value=document.getElementById("productclaid").value;
+    }
+</script>
+
+
 <%= form_for(@product) do |f| %>
     <fieldset>
       <% if @product.errors.any? %>
@@ -13,37 +26,57 @@
       <% end %>
 
 
-      <table class="col-lg-8">
+      <table class="col-lg-9">
+
+
         <tr>
           <div class="form-group">
-            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :单位ID %></td>
-            <td><%= f.text_field :unit_id, class:"form-control" %></td>
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家 %></td>
+            <td> <%= f.hidden_field :seller_id,value:1%>
+              <% @sellers = Seller.all%>
+              <select id="sellerid" class="form-control" type="text" onchange="cardtypeselect()">
+                <%= @sellers.each do |f| %>
+                    <option value=<%=f.id%>><%=f.name%></option>
+                <%end%>
+              </select></td>
           </div>
         </tr>
+
         <tr>
           <div class="form-group">
-            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :产品分类ID %></td>
-            <td><%= f.text_field :productcla_id, class:"form-control" %></td>
-          </div>
-        </tr>
-        <tr>
-          <div class="form-group">
-            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :商家ID %></td>
-            <td><%= f.text_field :seller_id, class:"form-control" %></td>
-          </div>
-        </tr>
-        <tr>
-          <div class="form-group">
-            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :姓名 %></td>
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :产品名称 %></td>
             <td><%= f.text_field :name, class:"form-control" %></td>
           </div>
         </tr>
+
         <tr>
           <div class="form-group">
-            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :图片 %></td>
-            <td><%= f.text_field :image, class:"form-control" %></td>
+            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :单位 %></td>
+            <td> <%= f.hidden_field :unit_id,value:1%>
+              <% @units = Unit.all%>
+              <select id="unitid" class="form-control" type="text" onchange="cardtypeselect1()">
+                <%= @units.each do |f| %>
+                    <option value=<%=f.id%>><%=f.name%></option>
+                <%end%>
+              </select></td>
           </div>
         </tr>
+
+        <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:30px;text-align: right;padding: 10px;"><%= f.label :产品分类 %></td>
+            <td> <%= f.hidden_field :productcla_id,value:1%>
+              <% @productclas = Productcla.all%>
+              <select id="productclaid" class="form-control" type="text" onchange="cardtypeselect2()">
+                <%= @productclas.each do |f| %>
+                    <option value=<%=f.id%>><%=f.name%></option>
+                <%end%>
+              </select></td>
+          </div>
+        </tr>
+
+
+
         <tr>
           <div class="form-group">
             <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :原价 %></td>
@@ -63,6 +96,13 @@
           </div>
         </tr>
         <tr>
+          <div class="form-group">
+            <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :图片 %></td>
+            <td><%= f.kindeditor :image, class:"form-control" %></td>
+          </div>
+        </tr>
+
+        <tr>
           <div>
             <td style="margin-top: 10px;width:80px;text-align: right;padding: 10px;"><%= f.label :状态 %></td>
             <td >
@@ -70,7 +110,7 @@
                 <%= f.number_field :status, value:1, class:"form-control" %>
               </div>
 
-              <div class="toggle-switch text-toggle-switch" data-off-label="停用" data-on="primary" data-on-label="正常">
+              <div class="toggle-switch text-toggle-switch" data-off-label="下架" data-on="primary" data-on-label="上架">
                 <% if @product.status == 0 %>
                     <input id="statuschange" name="statuschange" type="checkbox" onchange="javascript:adminstatuschange()">
                 <% else %>

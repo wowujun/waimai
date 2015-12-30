@@ -5,6 +5,7 @@ class SellersController < ApplicationController
   # GET /sellers.json
   def index
     @sellers = Seller.all
+    @clas = Cla.all
   end
 
   # GET /sellers/1
@@ -69,6 +70,6 @@ class SellersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def seller_params
-      params.require(:seller).permit(:selleradmin_id, :name, :summary, :tel, :address, :logo, :hint, :location, :status)
+      params.require(:seller).permit( :name, :summary, :tel, :address, :logo, :hint, :location, :status,:loginname,:password, :password_confirmation,:cla_id)
     end
 end

@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
+  resources :product_productcla_refs
+  resources :productclas_products
+  resources :productclas_products
   resources :clas
   resources :couriers
-  get 'sides/index'
+  resources :sides do
+    get 'destroy_indent', on: :collection
+  end
+  get 'sides/news'
 
+  get 'sides/index'
+  get 'sides/indent'
   get 'sides/show'
 
   get 'ctsinits/index'
 
   get 'logins/new'
 
-  get 'logins/new'
   resources :logins
   resources :units
   resources :selleradmins

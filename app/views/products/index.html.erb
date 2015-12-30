@@ -25,16 +25,38 @@
 
       <% @products.each do |product| %>
           <tr>
-            <td width="30px"><i class="heading icon-user"></i></td>
-            <td><%= product.unit_id %></td>
-            <td><%= product.productcla_id %></td>
-            <td><%= product.seller_id %></td>
+            <td width="30px"><i class="heading icon-th-list"></i></td>
+            <% @unit=@units.find_by_id(product.unit_id) rescue nil %>
+            <% if @unit %>
+                <td class="hidden-xs"><%= @unit.name %></td>
+            <% else %>
+                <td class="hidden-xs">&nbsp;</td>
+            <% end %>
+
+            <% @productcla=@productclas.find_by_id(product.productcla_id) rescue nil %>
+            <% if @productcla %>
+                <td class="hidden-xs"><%= @productcla.name %></td>
+            <% else %>
+                <td class="hidden-xs">&nbsp;</td>
+            <% end %>
+
+            <% @seller=@sellers.find_by_id(product.seller_id) rescue nil %>
+            <% if @seller %>
+                <td class="hidden-xs"><%= @seller.name %></td>
+            <% else %>
+                <td class="hidden-xs">&nbsp;</td>
+            <% end %>
+
             <td><%= product.name %></td>
             <td><%= product.image %></td>
             <td><%= product.costprice %></td>
             <td><%= product.currentprice %></td>
             <td><%= product.num %></td>
-            <td><%= product.status %></td>
+            <%if product.status==1%>
+                <td>上架</td>
+            <%else%>
+                <td>下架</td>
+            <%end%>
             <td width="100px" align="center"><%= link_to "", product,  class:"icon-pencil usricons", title: "编辑" %>&nbsp;&nbsp;
               <%= link_to '', product, method: :delete, data: { confirm: '确认删除？' },class:"icon-trash usricons", title:"删除" %></td>
           </tr>

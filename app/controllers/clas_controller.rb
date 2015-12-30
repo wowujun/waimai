@@ -26,29 +26,24 @@ class ClasController < ApplicationController
   def create
     @cla = Cla.new(cla_params)
 
-    respond_to do |format|
       if @cla.save
-        format.html { redirect_to @cla, notice: 'Cla was successfully created.' }
-        format.json { render :show, status: :created, location: @cla }
+        redirect_to :action => 'index'
       else
-        format.html { render :new }
-        format.json { render json: @cla.errors, status: :unprocessable_entity }
+        redirect_to :action => 'new'
       end
-    end
+
   end
 
   # PATCH/PUT /clas/1
   # PATCH/PUT /clas/1.json
   def update
-    respond_to do |format|
+
       if @cla.update(cla_params)
-        format.html { redirect_to @cla, notice: 'Cla was successfully updated.' }
-        format.json { render :show, status: :ok, location: @cla }
+        redirect_to :action => 'index'
       else
-        format.html { render :edit }
-        format.json { render json: @cla.errors, status: :unprocessable_entity }
+        redirect_to :action => 'edit'
       end
-    end
+
   end
 
   # DELETE /clas/1

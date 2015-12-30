@@ -69,6 +69,6 @@ class IndentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def indent_params
-      params.require(:indent).permit(:customer_id, :diliveryman_id, :number, :status, :orderstatus, :sum, :bltime, :finishtime)
+      params.require(:indent).permit(:customer_id, :courier_id, :number, :status, :orderstatus, :sum, :bltime, :finishtime)
     end
 end
